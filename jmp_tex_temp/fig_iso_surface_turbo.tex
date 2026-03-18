@@ -1,0 +1,54 @@
+
+%\usetikzlibrary{external}
+\tikzexternalize
+\pgfplotsset{compat=newest}
+
+% Define Turbo colormap (safe even if built-in Turbo exists)
+\pgfplotsset{
+  colormap={turbo}{
+    rgb255(0cm)=(48,18,59)
+    rgb255(1cm)=(63,56,162)
+    rgb255(2cm)=(54,98,201)
+    rgb255(3cm)=(36,134,220)
+    rgb255(4cm)=(33,166,216)
+    rgb255(5cm)=(42,196,195)
+    rgb255(6cm)=(70,219,158)
+    rgb255(7cm)=(115,233,115)
+    rgb255(8cm)=(173,236,66)
+    rgb255(9cm)=(234,228,25)
+    rgb255(10cm)=(249,186,17)
+    rgb255(11cm)=(246,129,24)
+    rgb255(12cm)=(230,70,43)
+    rgb255(13cm)=(197,30,58)
+    rgb255(14cm)=(151,6,63)
+  }
+}
+
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[
+    view={60}{30},
+    width=12cm, height=9cm,
+    xlabel={Vaccine delay (months)},
+    ylabel={Cash incentive (RMB)},
+    zlabel={Predicted uptake},
+    zmin=0.5, zmax=1.0,
+    colormap name=turbo,
+    shader=interp,
+    colorbar,
+    colorbar style={title=Uptake},
+    grid=both,
+    title={Iso-acceptance surface (Predicted uptake)},
+    ticklabel style={font=\small},
+    label style={font=\small},
+    title style={font=\normalsize\bfseries},
+    mesh/ordering=y varies
+  ]
+    \addplot3[surf]
+      table[x=Delay, y=Cash, z=Uptake, col sep=tab]{uptake_surface.dat};
+  \end{axis}
+\end{tikzpicture}
+\end{document}
+
+
+

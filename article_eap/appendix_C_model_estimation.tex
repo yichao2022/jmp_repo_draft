@@ -1,0 +1,236 @@
+% ============================
+% Appendix C. Model Estimation Details
+% ============================
+
+\section*{Appendix C Model Estimation Details}
+\label{app:C}
+\doublespacing
+
+This appendix provides additional detail on the estimation of the mixed logit models and the
+derivation of exponential and hyperbolic discount parameters used in the main analysis.
+
+\subsection*{C1. Utility Specification}
+
+We adopt a random–utility framework in which individual $i$ evaluates vaccine alternative $j$
+in choice task $t$ according to:
+
+\begin{align}
+U_{ijt} &= \beta_0
++ \beta_1\,\text{VaccineDelay}_{\text{std},ijt}
++ \beta_2\,\text{VaccineOrigin}_{\text{std},ijt}
++ \beta_3\,\text{VaccineEfficacy}_{\text{std},ijt} \notag\\
+&\quad + \beta_4\,\text{SideEffects}_{\text{std},ijt}
++ \beta_5\,\text{CashIncentives}_{\text{std},ijt}
++ \varepsilon_{ijt}, \tag{C1}
+\end{align}
+
+where $\varepsilon_{ijt}$ follows an i.i.d.\ Type I extreme-value distribution.  
+For comparison, both conditional logit (MNL) and mixed logit (MXL) models were estimated,
+but the MXL is the preferred specification because it allows random coefficients to capture
+unobserved preference heterogeneity.
+
+In vector notation:
+
+\begin{equation}
+U_{ijt}
+= \beta_0
++ \sum_{k=1}^{K} \beta_k X_{k,ijt}
++ \varepsilon_{ijt},
+\tag{C2}
+\end{equation}
+
+Standardization of the attribute coefficients facilitates comparison across attributes and inputs
+directly into the discount-rate estimation procedure described below.
+
+\subsection*{C2. Discount Function Specification}
+
+Observed delay levels $t \in \{0,1,3,6\}$ months are mapped to standard exponential and
+hyperbolic discounting frameworks:
+
+\begin{align}
+D_{\text{Exp}}(t;\hat{\delta}) &= e^{-\hat{\delta} t}, \qquad \hat{\delta} \ge 0, \tag{C3}\\[4pt]
+D_{\text{Hyper}}(t;\hat{\kappa}) &= \frac{1}{1+\hat{\kappa} t}, \qquad \hat{\kappa} \ge 0. \tag{C4}
+\end{align}
+
+
+These formulations correspond to time-consistent (exponential) and present-biased
+(hyperbolic) discounting, respectively.
+
+\subsection*{C3. Constructing Observed Discount Points}
+
+Let $\beta_{\text{delay (per month)}}$ be the unstandardized coefficient from the secondary model in
+which delay is entered linearly. This coefficient represents the marginal utility loss associated
+with a one-month increase in delay. It is recovered from the standardized coefficient via:
+
+\[
+\beta_{\text{delay (per month)}} 
+= \frac{\beta_{\text{delay (std)}}}{\mathrm{SD}(\text{MultipleDelays})}. \tag{C5}
+\]
+
+Following standard practice in preventive-health time-preference studies, we define the
+utility-consistent “observed” discount factor for each delay $t$ as:
+
+\[
+D_{\text{obs}}(t) 
+= \exp\!\left(-\beta_{\text{delay (per month)}}\, t\right). \tag{C6}
+\]
+
+These points serve as empirical inputs for fitting exponential and hyperbolic discount functions.
+
+\subsection*{C4. Estimation of Discount Parameters}
+
+The exponential and hyperbolic discount parameters are obtained by minimizing the sum of
+squared errors (SSE) between the observed and theoretical discount functions.
+
+\paragraph{Hyperbolic fit.}
+
+\[
+\mathrm{SSE}_{\text{Hyper}}(\hat{\kappa})
+= \sum_{i=1}^{n}
+\left[
+D_{\text{obs}}(t_i)
+- D_{\text{Hyper}}(t_i;\hat{\kappa})
+\right]^2 .
+\tag{C7}
+\]
+
+
+The first-order condition is:
+
+\[
+\frac{\partial}{\partial \kappa}
+\mathrm{SSE}_{\text{Hyper}}(\kappa)
+= 2 \sum_{i=1}^{n}
+\left(
+D_{\text{obs}}(t_i)
+- \frac{1}{1 + \kappa t_i}
+\right)
+\frac{t_i}{(1 + \kappa t_i)^2}
+= 0,
+\qquad \text{evaluated at } \kappa = \hat{\kappa}.
+\tag{C8}
+\]
+
+
+\paragraph{Exponential fit}
+
+\[
+\mathrm{SSE}_{\text{Exp}}(\hat{\delta})
+= \sum_{i=1}^{n}
+\left[
+D_{\text{obs}}(t_i)
+- D_{\text{Exp}}(t_i;\hat{\delta})
+\right]^2 .
+\tag{C9}
+\]
+
+First-order condition:
+
+\[
+\frac{\partial}{\partial \delta}
+\mathrm{SSE}_{\text{Exp}}(\delta)
+= 2 \sum_{i=1}^{n}
+\left(
+D_{\text{obs}}(t_i)
+- e^{-\delta t_i}
+\right)
+t_i e^{-\delta t_i}
+= 0,
+\qquad \text{evaluated at } \delta = \hat{\delta}.
+\tag{C10}
+\]
+
+Closed-form solutions do not exist; parameters were estimated via nonlinear least squares.
+
+\subsection*{C5. Subgroup Estimation and Multiplicity}
+
+Subgroup-specific MXL models were estimated separately for demographic, behavioural,
+health-status, and institutional-trust categories. Because this involves multiple hypothesis tests,
+$p$-values for subgroup delay coefficients were adjusted using the Benjamini–Hochberg
+false-discovery rate (FDR) at $q = 0.10$. Robustness of subgroup differences was confirmed
+under Holm–Bonferroni corrections.
+
+
+\subsection*{C.6 Recovering Discount Parameters from Waiting-Time Coefficients}
+
+To recover exponential discount parameters from the DCE model, we map the estimated 
+waiting-time coefficient $\beta_{\text{delay}}$ to the implied monthly discount factor $\delta$. 
+Under exponential discounting, utility declines with delay according to $U(t) = U_0 \delta^{t}$. A first-order approximation yields a linear representation in which 
+the marginal disutility of delay corresponds to the logarithm of the discount factor. 
+Normalizing the baseline utility $U_0 = 1$ implies:
+
+\[
+\hat{\delta} = \exp\!\left(\hat{\beta}_{\text{delay}}\right).
+\]
+
+
+Thus, more negative values of $\beta_{\text{delay}}$ correspond to lower discount factors and 
+stronger impatience toward delayed protection. This transformation is used to obtain the 
+discount parameters reported in Table~\ref{tab:subgroups_long}.
+
+\subsection*{C.7 MWTA Derivation}
+
+The marginal willingness-to-accept (MWTA) for one month of delay is derived as the 
+ratio of the delay coefficient to the cash-incentive coefficient:
+
+\[
+\text{MWTA} = -\frac{\beta_{\text{delay}}}{\beta_{\text{cash}}}.
+\]
+
+This represents the monetary compensation required to offset the disutility of an 
+additional month of waiting.
+
+
+
+\subsection*{C8. Additional Diagnostics}
+
+We conducted additional diagnostic checks, including model comparison (AIC and
+log-likelihood), scale-heterogeneity assessment using a GMNL specification, and
+re-estimation excluding potential speeders. Across all alternative specifications, the sign,
+magnitude, and statistical significance of the delay coefficient remained highly stable,
+and the implied discount parameters were unchanged. These results confirm that the
+main findings are robust to functional-form assumptions and response-quality concerns.
+Full model outputs are available upon request.
+
+
+
+\subsection*{C9. Behavioral Delay Multiplier (BDM)}
+
+To provide an intuitive interpretation of the hyperbolic discount parameter, we compute a
+Behavioral Delay Multiplier (BDM), defined as:
+
+\[
+\mathrm{BDM} = \frac{1}{1 - \hat{\kappa}}, \tag{C11}
+\]
+
+which rescales the estimated hyperbolic parameter into a measure of the perceived cost of
+waiting. A value greater than 1 indicates that each month of objective delay is experienced as
+a longer \emph{behavioural} delay. For example, the overall estimate $\hat{\kappa} = 0.225$
+implies a BDM of 1.29, meaning that one month of waiting feels equivalent to approximately
+1.29 months. Subgroups with larger $\hat{\kappa}$—such as older adults, respondents with
+primary education, or those reporting neutral trust in government—exhibit BDM values
+between 1.45 and 1.55, indicating substantially amplified perceived waiting costs. In contrast,
+groups with smaller $\hat{\kappa}$, including rural residents and individuals reporting regular
+physical activity, show BDM values near 1.15–1.20, reflecting weaker behavioural sensitivity
+to delay. This multiplier offers a transparent summary measure that complements the formal
+discount-rate estimates presented in Sections~C2–C4.
+
+\begin{table}[H]
+\centering
+\caption{Behavioral Delay Multiplier (BDM) for Selected Subgroups}
+\label{tab:BDM}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Subgroup} & $\hat{\kappa}$ & \textbf{BDM} & \textbf{Interpretation} \\
+\midrule
+Overall sample          & 0.225 & 1.29 & 1 month feels like 1.29 months \\
+Urban residents         & 0.290 & 1.41 & Higher perceived waiting cost \\
+Rural residents         & 0.174 & 1.21 & Lower perceived waiting cost \\
+Primary education       & 0.348 & 1.53 & Amplified behavioural delay \\
+Adults aged 65+         & 0.327 & 1.49 & Delay feels substantially longer \\
+Neutral trust in gov.   & 0.356 & 1.55 & Strongest impatience \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+

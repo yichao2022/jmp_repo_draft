@@ -1,0 +1,88 @@
+\section*{Appendix B. Sample Representativeness and Census Benchmarking}
+\label{app:B}
+\doublespacing
+
+This appendix evaluates the representativeness of the analytic sample ($N = 1{,}027$) by 
+comparing key demographic characteristics with benchmarks from the 2020 Wuhan Census \cite{WuhanStats2021}.
+Sampling of the quotes ensured the alignment in gender, age, and district of residence. As shown in 
+Table~\ref{tab:census_compare_B1}, the sample closely approximates the demographic profile 
+of Wuhan’s adult population. Minor differences—such as a slightly higher proportion of 
+college-educated respondents—are typical of online survey panels and were further examined 
+through robustness and weighting analyses.
+
+\begin{table}[H]
+\centering
+\caption{Comparison of Analytic Sample with 2020 Wuhan Census Benchmarks}
+\label{tab:census_compare_B1}
+\begin{tabular}{p{5cm}cc}
+\toprule
+\textbf{Characteristic} & \textbf{Sample (\%)} & \textbf{Wuhan Census (\%)} \\
+\midrule
+
+\textit{Gender} & & \\
+\quad Female & 53.0 & 51.1 \\
+\quad Male   & 47.0 & 48.9 \\
+
+\addlinespace
+\textit{Age Distribution} & & \\
+\quad 18--34 & 21.0 & 23.9 \\
+\quad 35--44 & 31.2 & 28.6 \\
+\quad 45--54 & 22.5 & 21.7 \\
+\quad 55--65 & 13.2 & 14.3 \\
+\quad 65+    & 12.0 & 11.5 \\
+
+\addlinespace
+\textit{Residence} & & \\
+\quad Urban & 47.0 & 48.3 \\
+\quad Rural & 53.0 & 51.7 \\
+
+\addlinespace
+\textit{Education Level} & & \\
+\quad No formal schooling & 4.0 & 5.6 \\
+\quad Primary school & 22.0 & 24.3 \\
+\quad Middle school & 25.7 & 27.1 \\
+\quad High school & 20.4 & 21.7 \\
+\quad College/University & 15.6 & 13.4 \\
+\quad Graduate degree & 11.0 & 7.9 \\
+
+\bottomrule
+\end{tabular}
+
+\vspace{6pt}
+\footnotesize
+\textit{Note.} Census benchmarks are drawn from 
+the Wuhan Bureau of Statistics\cite{WuhanStats2021}. Deviations follow typical patterns in online survey panels. 
+Post-stratification weighting yielded mixed-logit and discount-rate estimates substantively 
+identical to unweighted results (Appendix~C).
+\end{table}
+
+\begin{tcolorbox}[
+    colback=gray!5,
+    colframe=gray!50,
+    boxrule=0.6pt,
+    arc=3pt,
+    left=6pt,
+    right=6pt,
+    top=6pt,
+    bottom=6pt
+]
+\textbf{Summary of Sample Representativeness}
+
+\begin{itemize}[leftmargin=1.2em]
+    \item Survey sampling produced close alignment with Wuhan’s 2020 Census for gender, 
+          age, and urban--rural residence.
+    \item Slight upward shift in college-educated respondents is consistent with online 
+          panel sampling.
+    \item Pearson $\chi^2$ tests indicate no statistically significant difference between 
+          sample and population distributions at the 5\% level.
+    \item Weighted and unweighted mixed-logit models produced nearly identical results, 
+          confirming robustness to demographic composition (see Appendix~C).
+\end{itemize}
+\end{tcolorbox}
+
+To formally evaluate representativeness, Pearson $\chi^2$ tests were conducted for gender, 
+age group, and residence. All tests were statistically non-significant at the 5\% level, 
+indicating no systematic deviation from Wuhan’s adult population. Weighted mixed-logit 
+models yielded parameters nearly identical to those in the unweighted sample, reinforcing 
+the robustness of the main findings.
+

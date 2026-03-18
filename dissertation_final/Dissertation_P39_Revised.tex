@@ -1,0 +1,19 @@
+We recover $(\hat{\kappa},\hat{\delta})$ by fitting \eqref{eq:Dexp} and \eqref{eq:Dhyp} to the empirical discount points \eqref{eq:Dobs} across the observed delay horizons. The full estimation procedure---including construction of $D_{\text{obs}}(t)$, the objective functions used to fit $(\hat{\kappa},\hat{\delta})$, and alternative fitting/robustness checks---is provided in the \textit{Appendix to Essay~1}. Conceptually, this approach treats the experimentally identified delay coefficient as an empirical summary of intertemporal trade-offs and expresses it in parameterized discounting form for interpretation and comparison.
+
+\subsection*{Heterogeneity in discounting}
+Heterogeneity in time preferences is examined in two complementary ways.
+
+\paragraph{Unobserved heterogeneity.}
+The mixed logit model estimates a distribution for $\beta_{\text{delay},i}$ via $\sigma_{\text{delay}}$ in \eqref{eq:random_delay}, capturing continuous dispersion in delay sensitivity across respondents.
+
+\paragraph{Observed heterogeneity.}
+To test whether impatience varies systematically with biological vulnerability, institutional trust, and preventive routines, we augment \eqref{eq:utility_main} with interactions between delay and respondent characteristics:
+\begin{equation}
+U_{ijt} = \beta_{\text{delay}} \, \text{Delay}_{ijt} + \boldsymbol{\gamma}'\!\left(\mathbf{Z}_i \times \text{Delay}_{ijt}\right) + \mathbf{X}_{ijt}'\boldsymbol{\beta} + \text{ASC}_{\text{opt-out}} \cdot \mathbbm{1}\{j=\text{opt-out}\} + \varepsilon_{ijt},
+\label{eq:heterogeneity}
+\end{equation}
+where $\mathbf{X}_{ijt}$ collects the remaining vaccine attributes. The vector $\mathbf{Z}_i$ includes indicators for chronic conditions (biological vulnerability), institutional trust, and measures of preventive-health routines. 
+
+Consistent with the definitions used throughout this dissertation, institutional trust is operationalized as a binary indicator. Following the standard 5-point Likert scale measurement (Appendix A.1.3), we categorize respondents who expressed explicit confidence (``Strongly trust'' or ``Somewhat trust'') as the \textit{High Institutional Trust} subgroup. Respondents who expressed explicit distrust or a neutral/uncertain stance (``Neutral,'' ``Somewhat distrust,'' or ``Strongly distrust'') are categorized as the \textit{Low Institutional Trust} subgroup. This classification ensures that the heterogeneous delay sensitivity results in Essay 1 are directly comparable to the monetized delay burdens and policy rules derived in Essays 2 and 3.
+
+The interaction vector $\boldsymbol{\gamma}$ measures how the marginal disutility of delay shifts across subgroups. Subgroup-specific discount parameters are obtained by applying the mapping in \eqref{eq:Dobs}--\eqref{eq:Dhyp} to the estimated subgroup-specific delay sensitivities (e.g., $\beta_{\text{delay}}+\gamma_z$ for subgroup $z$). This approach yields comparable $(\hat{\kappa},\hat{\delta})$ estimates across groups while preserving a unified identification strategy.

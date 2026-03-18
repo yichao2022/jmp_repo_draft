@@ -1,0 +1,113 @@
+\documentclass[preprint,12pt,authoryear]{elsarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{lineno}
+
+\journal{Preventive Medicine}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{How Humans Value Delayed Protection: Biological Vulnerability and Intertemporal Health Decisions}
+
+\author[1]{Yichao Jin}
+\author[1]{Dohyeong Kim\corref{cor1}}
+\address[1]{School of Economic, Political and Policy Sciences, The University of Texas at Dallas, Richardson, TX, USA}
+\cortext[cor1]{Corresponding author. Email: dohyeong.kim@utdallas.edu}
+
+\begin{abstract}
+\noindent \textbf{Objective:} Vaccination timing determines the duration of biological exposure to infectious risk. This study quantifies the behavioral cost of waiting as an intertemporal health investment and recovers structural time-preference parameters characterizing sensitivity to delayed protection.\\
+\textbf{Methods:} A large-scale discrete choice experiment (N=1,027) was conducted in Wuhan, China. Respondents chose between vaccination alternatives varying in efficacy, side effects, cash incentives, and waiting time. Structural hyperbolic and exponential discount models were fitted to trade-offs to estimate time-preference parameters ($\kappa, \delta$).\\
+\textbf{Results:} Respondents exhibited pronounced present-oriented preferences, strongly discounting delayed protection with a hyperbolic parameter $\kappa = 0.225$ and an exponential rate $\delta = 0.160$. The average marginal willingness-to-accept (MWTA) was 47 RMB per month of delay. Pronounced heterogeneity exists: low-trust respondents exhibited a significantly higher delay aversion (MWTA = 62.3 RMB) compared to high-trust individuals (28.7 RMB). The Behavioral Delay Multiplier (BDM) revealed that for vulnerable groups, objective delays are perceived as 1.5 times longer.\\
+\textbf{Conclusions:} Vaccination delays impose a "psychological time tax" that is socially and biologically patterned. Public health policies must account for these intertemporal frictions to improve equity and efficiency. Addressing institutional trust is critical to reducing the behavioral burden of waiting for protection.
+\end{abstract}
+
+\begin{keyword}
+Vaccination timing \sep Intertemporal preferences \sep Behavioral health economics \sep Institutional trust \sep Discrete choice experiment \sep Health equity
+\end{keyword}
+
+\end{frontmatter}
+
+\doublespacing
+\linenumbers
+
+\section{Introduction}
+Vaccination coverage is typically treated as a binary outcome, yet timing critically shapes the duration of biological exposure to infectious risk \citep{Castioni2024, Shankar2024}. Even modest delays in uptake extend periods of vulnerability, making intertemporal timing as critical as aggregate population coverage \citep{Rasmussen2021}. Vaccination timing represents a health investment decision where immediate costs are traded off against delayed and uncertain biological benefits \citep{Frederick2002}.
+
+While literature documents behavioral drivers of hesitancy \citep{Anderson2023, Robertson2024, Etowa2024}, waiting time is often treated as an administrative friction rather than a biologically meaningful interval of continued exposure \citep{Lievre2024, Tran2025, Whitaker2026}. From a physiological perspective, delay is not neutral; each period without protection entails ongoing exposure to morbidity risk. This study examines how individuals value vaccination timing as an intertemporal health investment, recovering structural time-preference parameters to characterize sensitivity to delay. Using a discrete choice experiment (N=1,027) in Wuhan, China, we link sensitivity to delay to structural determinants such as institutional trust and medical vulnerability \citep{Krastev2023, Bok2024, Kumar2025}, identifying a regressive "psychological time tax" on vulnerable populations.
+
+\section{Methods}
+\subsection{Study Design and Sample}
+We conducted a discrete choice experiment (DCE) in Wuhan, China. Wuhan provides a high-salience environment where biological consequences of delay are readily understood. A sample of 1,027 adults was recruited through multi-stage stratified sampling.
+
+\subsection{Discrete Choice Experiment}
+Respondents faced choice tasks involving three vaccine alternatives and an opt-out. Attributes included: (1) Vaccine efficacy (50\%, 70\%, 90\%), (2) Side effects (Mild, Moderate, Severe), (3) Cash incentives (0, 200, 500 RMB), and (4) Waiting time (Immediate, 1, 3, 6 months) \citep{Yue2021, Gong2020}. 
+
+\subsection{Statistical Analysis}
+We employed Random Utility Theory \citep{mcfadden2001}, utilizing Mixed Logit (MXL) models to identify taste heterogeneity. Structural parameters were recovered by fitting hyperbolic ($\kappa$) and exponential ($\delta$) discount models to the estimated utility coefficients for delay. We derived the Marginal Willingness-to-Accept (MWTA) for delay and the Behavioral Delay Multiplier (BDM), defined as the ratio of perceived to objective waiting time.
+
+\section{Results}
+\subsection{Structural Time Preferences}
+MXL models showed that vaccine delay was strongly negatively associated with uptake ($p < 0.01$). We recovered structural parameters $\kappa = 0.225$ (hyperbolic) and $\delta = 0.160$ (exponential). The hyperbolic curve exhibited a sharp initial decline, indicating pronounced short-run impatience for health protection (Fig. 1). Table 1 summarizes the main model estimates.
+
+\begin{table}[!ht]
+\centering
+\caption{Main Model Estimates (Mixed Logit)}
+\label{tab:models}
+\begin{tabular}{lc}
+\toprule
+Variable & Coefficient (S.E.) \\
+\midrule
+Vaccine delays (std) & $-0.353^{***}$ (0.027) \\
+Vaccine efficacy (std) & $0.218^{***}$ (0.041) \\
+Side effects (std) & $0.008$ (0.031) \\
+Cash incentives (std) & $0.431^{***}$ (0.025) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=0.7\linewidth]{fig1.png}
+\caption{Hyperbolic vs. Exponential Discounting Profiles for Biological Protection.}
+\end{figure}
+
+\subsection{Heterogeneity and MWTA}
+The average MWTA was 47 RMB per month of waiting. However, delay aversion was systematically patterned by institutional trust \citep{Sohns2024, MacDonald2025} (Fig. 2). Low-trust respondents required significantly higher compensation (62.3 RMB) compared to high-trust respondents (28.7 RMB). 
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\linewidth]{fig2.png}
+\caption{Heterogeneity in Hyperbolic Discount Parameters by Institutional Trust and Vulnerability.}
+\end{figure}
+
+\subsection{Behavioral Delay Multiplier (BDM)}
+The average BDM was 1.29, indicating that a 30-day delay is perceived as 39 days. For low-trust and medically vulnerable groups, the BDM approached 1.5 (Fig. 3). 
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\linewidth]{fig3.png}
+\caption{The Behavioral Delay Multiplier: Subjective vs. Objective Waiting Time.}
+\end{figure}
+
+\section{Discussion}
+Our findings demonstrate that vaccination delay is a biologically consequential bottleneck driven by intertemporal preferences. Respondents discount delayed protection at rates higher than standard financial investments, consistent with "present-biased" health behavior \citep{vanderPol2001, Attema2013, Attema2018}.
+
+The pronounced gradient by institutional trust suggests that trust acts as a stabilizer for future health expectations. When trust is low, the uncertainty of future protection makes immediate exposure more salient, driving steeper discounting. This creates a "time tax" where the most vulnerable populations face the highest psychological cost of waiting \citep{Sohns2024}.
+
+Integrating these parameters into behaviorally-augmented SEIR models suggests that behavioral delay can increase cumulative attack rates by 5--10\% compared to logistical-only models. Policy interventions must focus on "time-consistent" strategies: reducing wait times at sites serving low-trust communities and using "nudge" strategies to bridge the gap between immediate friction and delayed protection \citep{Owens2026, Siram2024}.
+
+\section{Conclusion}
+Vaccination timing is a critical intertemporal health investment. We find that delay aversion is socially and biologically patterned, imposing a regressive burden on vulnerable populations. Public health preparedness requires addressing not only aggregate coverage but also the behavioral frictions that prolong exposure risk.
+
+\section*{References}
+\bibliographystyle{elsarticle-harv}
+\bibliography{refs}
+
+\end{document}

@@ -1,0 +1,5 @@
+- Vaccination timing is modeled as an intertemporal health investment decision.
+- Recovered structural discount parameters show steep short-run impatience.
+- Low institutional trust significantly increases delay aversion and MWTA.
+- Objective delays are perceived 1.5x longer by vulnerable populations.
+- Behavioral delay increases infection risk by shifting immunization timing.

@@ -1,0 +1,88 @@
+\begin{thebibliography}{13}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Anderson et~al.(2023)Anderson, Vu, Mateen and Byrne}]{Anderson2023}
+\bibinfo{author}{Anderson, C.}, \bibinfo{author}{Vu, J.}, \bibinfo{author}{Mateen, B.A.}, \bibinfo{author}{Byrne, M.H.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Internal and external factors affecting vaccination coverage}.
+\newblock \bibinfo{journal}{Vaccines} \bibinfo{volume}{11}, \bibinfo{pages}{1503}.
+\newblock \DOIprefix\doi{10.3390/vaccines11091503}.
+%Type = Article
+\bibitem[{Attema et~al.(2025)Attema, Brouwer and Claxton}]{Attema2025}
+\bibinfo{author}{Attema, A.E.}, \bibinfo{author}{Brouwer, W.B.F.}, \bibinfo{author}{Claxton, K.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Time preferences and covid-19 vaccination uptake}.
+\newblock \bibinfo{journal}{Health Economics} \bibinfo{volume}{34}, \bibinfo{pages}{45--58}.
+\newblock \DOIprefix\doi{10.1002/hec.4859}. \bibinfo{note}{multi-country analysis linking present bias and vaccination uptake}.
+%Type = Article
+\bibitem[{Bechtel et~al.(2023)Bechtel, Garc{\'i}a and Hensel}]{Bechtel2023}
+\bibinfo{author}{Bechtel, M.M.}, \bibinfo{author}{Garc{\'i}a, L.}, \bibinfo{author}{Hensel, C.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Measuring time preferences in large surveys}.
+\newblock \bibinfo{journal}{Political Science Research and Methods} \bibinfo{volume}{12}, \bibinfo{pages}{426--434}.
+%Type = Article
+\bibitem[{Betsch et~al.(2018)Betsch, Schmid, Heinemeier, Korn, Holtmann and B{\"o}hm}]{Betsch2018}
+\bibinfo{author}{Betsch, C.}, \bibinfo{author}{Schmid, P.}, \bibinfo{author}{Heinemeier, D.}, \bibinfo{author}{Korn, L.}, \bibinfo{author}{Holtmann, C.}, \bibinfo{author}{B{\"o}hm, R.}, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{Beyond confidence: Development of a measure assessing the 5c psychological antecedents of vaccination}.
+\newblock \bibinfo{journal}{PLoS ONE} \bibinfo{volume}{13}, \bibinfo{pages}{e0208601}.
+\newblock \DOIprefix\doi{10.1371/journal.pone.0208601}.
+%Type = Article
+\bibitem[{Castioni et~al.(2024)Castioni, Cornilleau, Cattani, Gatto, Rinaldo and Colizza}]{Castioni2024}
+\bibinfo{author}{Castioni, L.}, \bibinfo{author}{Cornilleau, P.}, \bibinfo{author}{Cattani, M.}, \bibinfo{author}{Gatto, M.}, \bibinfo{author}{Rinaldo, A.}, \bibinfo{author}{Colizza, V.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Rebound in epidemic control: how misaligned vaccination timing amplifies infection peaks}.
+\newblock \bibinfo{journal}{Nature} \DOIprefix\doi{10.1038/s44260-024-00020-0}.
+%Type = Article
+\bibitem[{Chapman(2005)}]{Chapman2005}
+\bibinfo{author}{Chapman, G.B.}, \bibinfo{year}{2005}.
+\newblock \bibinfo{title}{Short-term cost for long-term benefit: Time preference and cancer control}.
+\newblock \bibinfo{journal}{Health Psychology} \bibinfo{volume}{24}, \bibinfo{pages}{S41--S48}.
+%Type = Article
+\bibitem[{Chapman and Li(2010)}]{Chapman2010}
+\bibinfo{author}{Chapman, G.B.}, \bibinfo{author}{Li, M.}, \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{Designing effective nudges for influenza vaccination}.
+\newblock \bibinfo{journal}{Health Psychology} \bibinfo{volume}{29}, \bibinfo{pages}{629--637}.
+\newblock \DOIprefix\doi{10.1037/a0021628}.
+%Type = Article
+\bibitem[{Frederick et~al.(2002)Frederick, Loewenstein and O'Donoghue}]{Frederick2002}
+\bibinfo{author}{Frederick, S.}, \bibinfo{author}{Loewenstein, G.}, \bibinfo{author}{O'Donoghue, T.}, \bibinfo{year}{2002}.
+\newblock \bibinfo{title}{Time discounting and time preference: A critical review}.
+\newblock \bibinfo{journal}{Journal of Economic Literature} \bibinfo{volume}{40}, \bibinfo{pages}{351--401}.
+\newblock \DOIprefix\doi{10.1257/002205102320161311}.
+%Type = Article
+\bibitem[{Hole(2007)}]{Hole2007}
+\bibinfo{author}{Hole, A.R.}, \bibinfo{year}{2007}.
+\newblock \bibinfo{title}{A comparison of approaches to estimating confidence intervals for willingness to pay measures}.
+\newblock \bibinfo{journal}{Health Economics} \bibinfo{volume}{16}, \bibinfo{pages}{827--840}.
+\newblock \DOIprefix\doi{10.1002/hec.1197}.
+%Type = Article
+\bibitem[{MacDonald and {SAGE Working Group on Vaccine Hesitancy}(2015)}]{MacDonald2015}
+\bibinfo{author}{MacDonald, N.E.}, \bibinfo{author}{{SAGE Working Group on Vaccine Hesitancy}}, \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{Vaccine hesitancy: Definition, scope and determinants}.
+\newblock \bibinfo{journal}{Vaccine} \bibinfo{volume}{33}, \bibinfo{pages}{4161--4164}.
+%Type = Article
+\bibitem[{McFadden(2001)}]{mcfadden2001}
+\bibinfo{author}{McFadden, D.}, \bibinfo{year}{2001}.
+\newblock \bibinfo{title}{Economic choices}.
+\newblock \bibinfo{journal}{American Economic Review} \bibinfo{volume}{91}, \bibinfo{pages}{351--378}.
+%Type = Article
+\bibitem[{Shankar et~al.(2024)Shankar, Bentley, Klepac et~al.}]{Shankar2024}
+\bibinfo{author}{Shankar, R.}, \bibinfo{author}{Bentley, N.}, \bibinfo{author}{Klepac, P.}, et~al., \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{How mathematical modelling can inform outbreak response vaccination}.
+\newblock \bibinfo{journal}{BMC Infectious Diseases} \bibinfo{volume}{24}.
+\newblock \DOIprefix\doi{10.1186/s12879-024-10243-0}.
+%Type = Book
+\bibitem[{Train(2009)}]{Train2009}
+\bibinfo{author}{Train, K.E.}, \bibinfo{year}{2009}.
+\newblock \bibinfo{title}{Discrete Choice Methods with Simulation}.
+\newblock \bibinfo{edition}{2nd} ed., \bibinfo{publisher}{Cambridge University Press}, \bibinfo{address}{Cambridge, UK}.
+\newblock \DOIprefix\doi{10.1017/CBO9780511805271}.
+
+\end{thebibliography}

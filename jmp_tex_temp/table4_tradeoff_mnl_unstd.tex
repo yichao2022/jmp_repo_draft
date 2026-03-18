@@ -1,0 +1,49 @@
+
+% =========================================================
+% Table 4 — Trade-off Estimates (MNL, Unstandardized)
+% =========================================================
+\begin{table}[htbp]
+\centering
+
+\caption{Trade-off Estimates (MNL, unstandardized): MWTA and WTW with cluster-robust 95\% confidence intervals}
+\label{tab:tradeoff_mnl}
+\small
+\setlength{\tabcolsep}{6pt}
+\begin{threeparttable}
+\begin{tabular}{
+    l
+    S[table-format=3.2]
+    S[table-format=2.2]
+    l
+    S[table-format=2.2]
+    S[table-format=2.2]
+    l
+}
+\toprule
+\textbf{Attribute} &
+\multicolumn{3}{c}{\textbf{MWTA}} &
+\multicolumn{3}{c}{\textbf{WTW}} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+ & {RMB} & {SE} & {95\% CI} & {months} & {SE} & {95\% CI} \\
+\midrule
+Vaccine delays (per month)              & 56.35  & 10.84 & [35.10, 77.60]   & -1.00 & 0.17 & [-1.33, -0.67] \\
+Monetary incentives (per 100 RMB)           & -100.00  & 0.06  & [-1.11, -0.89]   &  2.00 & 0.00 & [0.01, 0.02]   \\
+Vaccine efficacy (per 10 pp)       & -43.97 & 11.40 & [-66.31, -21.63] &  0.78 & 0.18 & [0.43, 1.13]   \\
+Side effects (per severity level)  & 70.64  & 27.13 & [17.47, 123.81]  & -1.25 & 0.49 & [-2.21, -0.30] \\
+Origin (Imported)      & -237.93& 43.45 & [-323.08, -152.78]&  4.22 & 0.84 & [2.58, 5.86]   \\
+\bottomrule
+\end{tabular}
+\end{threeparttable}
+\begin{threeparttable}
+\begin{tablenotes}[flushleft,para]
+\footnotesize
+\textit{Notes:} MWTA (marginal willingness-to-accept) and WTW (willingness-to-wait)
+are computed as $-\beta_{x}/\beta_{\text{Cash}}$ and $-\beta_{x}/\beta_{\text{Delay}}$, respectively.
+Cluster-robust standard errors are calculated at the respondent level using the delta method.
+Vaccine efficacy was coded 0–1 and rescaled for interpretability to 10-percentage-point increments.
+Side effects represent the change per increase in severity level (Mild\,→\,Moderate\,→\,Severe).
+Confidence intervals convey statistical significance; p-values are omitted because MWTA and WTW
+are nonlinear ratios of estimated coefficients.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

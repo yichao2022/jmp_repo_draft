@@ -1,0 +1,536 @@
+\documentclass[10pt]{beamer}
+\usetheme{metropolis}
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+\usepackage{pgfplots}
+\usepackage{colortbl}
+\usepgfplotslibrary{dateplot}
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+% --- Custom Header for UCSD Tailoring ---
+\title{Waiting for Protection: Structural Estimation of Intertemporal Preferences for COVID-19 Vaccination}
+\subtitle{Job Market Paper --- Candidate Presentation for UC San Diego}
+\author{Yichao Jin}
+\institute{The University of Texas at Dallas}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+% -----------------------------------------------------------------------------
+% SECTION I: INTRODUCTION
+% -----------------------------------------------------------------------------
+\section{Introduction}
+
+\begin{frame}{Motivation: The Intertemporal Dimension of Health}
+    \begin{itemize}
+        \item Global vaccination research: Focused on "Hesitancy" vs. "Acceptance."
+        \item \textbf{Our Contribution}: Focus on the \alert{Intertemporal Dimension}.
+        \item Does the \textit{waiting time} to protection significantly discount the perceived value of vaccination?
+        \item This is critical for logistics, booster scheduling, and managing future outbreaks.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Research Questions}
+    \begin{itemize}
+        \item \textbf{Identification}: Recover structural parameters ($\delta, \kappa$) for delayed protection.
+        \item \textbf{Mechanisms}: Distinguish Constant vs. \alert{Present-biased} discounting.
+        \item \textbf{Heterogeneity}: Map preference variation across trust and income subgroups.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Preview: Core Take-home Messages}
+    \begin{enumerate}
+        \item \textbf{Mechanism}: Vaccination choices are best captured by \alert{Hyperbolic Discounting} ($\kappa > 0$).
+        \item \textbf{Psychological Cost}: The "Bias Toward the Present" (\textbf{BDM}) is \alert{1.29} --- waiting costs 29\% more than rational expectations predict.
+        \item \textbf{Welfare Impact}: The shadow price of waiting (\textbf{MWTA}) is approx. \alert{111 RMB/month} ($\approx$\$15).
+    \end{enumerate}
+    \vfill
+    \begin{center}
+        \textit{Trust and income significantly moderate these intertemporal costs.}
+    \end{center}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% SECTION II: METHODOLOGY (ENHANCED)
+% -----------------------------------------------------------------------------
+\section{Methodology: The Behavioral Toolbox}
+
+\begin{frame}{Target Population and Study Setting}
+    \begin{itemize}
+        \item \textbf{The Epicenter Context (Wuhan)}:
+        \begin{itemize}
+            \item Unique historical proximity to the initial COVID-19 outbreak.
+            \item High \alert{risk-salience} among residents provides a robust environment for eliciting intertemporal preferences.
+        \end{itemize}
+        \item \textbf{Strategic Sampling Window (Early 2021)}:
+        \begin{itemize}
+            \item Captured preferences during the critical \alert{voluntary phase}.
+            \item \textbf{Policy Context}: Pre-dated widespread local mandates or "Green Code" restrictions for vaccination.
+            \item \textbf{Supply}: Vaccination was available but not ubiquitous; reflects \textit{latent preferences} rather than system constraints.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Survey Design and Structure}
+    \begin{itemize}
+        \item \textbf{Platform}: Online survey panel in Wuhan ($N=1,027$).
+        \item \textbf{Instrument Structure}:
+        \begin{enumerate}
+            \item \textbf{Socio-Demographics}: Age, gender, income, education, residence.
+            \item \textbf{Health \& Attitudes}: Biological vulnerability, institutional trust, preventive-health routines.
+            \item \textbf{The DCE}: 6 choice tasks per respondent (drawn from a D-efficient design).
+            \item \textbf{Quality Control}: Attention filters, time-to-complete, and dominance checks.
+        \end{enumerate}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Disease Context: Why "COVID-like Diseases" (CLD)?}
+    \begin{itemize}
+        \item \textbf{Hypothetical but Realistic}: Attributes reflect a generic respiratory infectious disease with high pandemic potential.
+        \item \textbf{The Rationale for CLD Framing}:
+        \begin{itemize}
+            \item \alert{Minimizes Emotional Anchoring}: Decouples preferences from specific historical policy reactions or vaccine-brand controversies.
+            \item \alert{Neutralizes Social Stigma}: Reduces "social desirability bias" often associated with COVID-19 specific behavior in early 2021.
+        \end{itemize}
+        \item \textbf{External Validity}:
+        \begin{itemize}
+            \item Recovers \textit{structural parameters} that are generalizable to future \alert{Pandemic Preparedness}.
+            \item Applicable to any negative-externality health behavior (e.g., flu, future outbreaks).
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Attribute and Level Development}
+    \begin{itemize}
+        \item \textbf{Stage 1: Evidence Synthesis}: Review of 50+ papers and policy reports on vaccine hesitancy and time preferences.
+        \item \textbf{Stage 2: Expert Consultation}: Qualitative refinement with public health practitioners to ensure policy relevance.
+        \item \textbf{Stage 3: Pilot Study ($n=60$)}:
+        \begin{itemize}
+            \item Cognitive interviews to verify comprehension of "Time to Protection."
+            \item Used pilot data to elicit \alert{priors} for the final experimental design.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Experimental Design: Attributes and Levels}
+    \begin{table}
+        \centering
+        \small
+        \begin{tabular}{ll}
+            \toprule
+            Attribute & Levels \\
+            \midrule
+            \textbf{Vaccination Delay} ($T$) & \alert{0, 1, 3, 6 months} \\
+            Vaccine Efficacy ($E$) & 50\%, 70\%, 95\% \\
+            Side Effects ($S$) & Mild, Moderate, Severe \\
+            Vaccine Origin ($O$) & Domestic, Imported \\
+            Incentives ($M$) & 50, 200, 800 RMB \\
+            \bottomrule
+        \end{tabular}
+        \caption{Final attributes Justified by policy roll-out constraints.}
+    \end{table}
+\end{frame}
+
+\begin{frame}{DCE Construction: Sample Choice Task}
+    \begin{center}
+        \renewcommand{\arraystretch}{1.3}
+        \small
+        \begin{tabular}{l|c|c|c}
+            \hline
+            \rowcolor{gray!20} \textbf{Attributes} & \textbf{Vaccine A} & \textbf{Vaccine B} & \textbf{Opt-out} \\
+            \hline
+            Waiting Time to Protection & \alert{0 months} & \alert{3 months} & \\
+            Vaccine Efficacy & 95\% & 95\% & \\
+            Side Effects & Mild & Mild & \textbf{I would} \\
+            Vaccine Origin & Domestic & Imported & \textbf{choose} \\
+            Incentive / Subsidy & 50 RMB & 200 RMB & \textbf{neither.} \\
+            \hline
+            \rowcolor{blue!5} \textbf{Your Choice?} & $\square$ & $\square$ & $\square$ \\
+            \hline
+        \end{tabular}
+    \end{center}
+    \vfill
+    \begin{itemize}
+        \item \textbf{Task}: Trade-off between \alert{immediate protection} and \alert{higher incentives}.
+        \item \textbf{Efficiency}: D-efficient design using Bayesian priors from pilot study.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Theoretical Foundation: Random Utility Framework}
+    \begin{itemize}
+        \item \textbf{Core Assumption}: Individual $n$ chooses the vaccine that maximizes:
+    \end{itemize}
+    
+    \begin{equation}
+        U_{njt} = \underbrace{\text{Discounting}(T_j; \delta, \kappa)}_{\text{Behavioral Core}} \cdot \underbrace{V(X_j, M_j)}_{\text{Attributes}} + \epsilon_{njt}
+    \end{equation}
+    
+    \vspace{0.4cm}
+    \begin{itemize}
+        \item \textbf{Structural Specificity}:
+        \begin{itemize}
+            \item \textbf{Exponential}: $\text{Discounting} = \delta^T$
+            \item \textbf{Hyperbolic}: $\text{Discounting} = (1 + \kappa T)^{-1}$
+        \end{itemize}
+    \end{itemize}
+    \vfill
+    \centering \textit{$\epsilon_{njt} \sim$ IID Extreme Value Type I (Logit base)}
+\end{frame}
+
+\begin{frame}{Model Setup: Variables of Interest}
+    \begin{itemize}
+        \item \textbf{Dependent Variable}: Discrete Choice ($Y_{nit} \in \{A, B, None\}$)
+    \end{itemize}
+    
+    \vspace{0.4cm}
+    
+    \textbf{Independent Variables (Attributes):}
+    \begin{table}[]
+        \centering
+        \small
+        \begin{tabular}{llc}
+            \toprule
+            Variable & Role in Model & Coding \\
+            \midrule
+            \textbf{Waiting Time} & \alert{Structural Driver} & Continuous ($T$) \\
+            Cash Incentive & MWTA Denominator & Continuous ($M$) \\
+            Efficacy & Quality Control & Dummies \\
+            Side Effects & Risk Control & Dummies \\
+            Origin & Trust/Brand Control & Binary \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+    
+    \vfill
+    \begin{itemize}
+        \item \textbf{Sample}: $N=1,027$ residents; 6,162 total choice observations.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Empirical Strategy: Mapping Choices to Structure}
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \textbf{1. The Econometric Engine}
+            \begin{itemize}
+                \item \textbf{Mixed Logit (MXL)}: Captures latent heterogeneity across $N=1,027$ residents.
+                \item Accounts for the fact that "one size doesn't fit all" in vaccine preferences.
+            \end{itemize}
+            
+            \vspace{1cm}
+            
+            \textbf{2. The Structural Bridge}
+            \begin{itemize}
+                \item We map the empirical \alert{Delay coefficient} ($\beta_{delay}$) into deep parameters:
+                \begin{itemize}
+                    \item $\delta$ (Patience)
+                    \item $\kappa$ (Present-bias)
+                \end{itemize}
+            \end{itemize}
+        \end{column}
+        
+        \begin{column}{0.5\textwidth}
+            \centering
+            \begin{exampleblock}{The Mapping Intuition}
+                \centering
+                \small
+                Experimental Trade-offs \\
+                \textit{(Cash vs. Wait Time)} \\
+                \vspace{0.3cm}
+                $\downarrow$ \\
+                \vspace{0.3cm}
+                \textbf{Behavioral Parameters} \\
+                $(\delta, \kappa)$ \\
+                \vspace{0.3cm}
+                $\downarrow$ \\
+                \vspace{0.3cm}
+                \alert{\textbf{Policy Simulations}}
+            \end{exampleblock}
+            \vfill
+            \scriptsize \textit{This approach identifies "why" people choose, not just "what" they choose.}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% SECTION III: RESULTS (JMP)
+% -----------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
+% SECTION III: RESULTS I (THE BEHAVIORAL DISCOVERY)
+% -----------------------------------------------------------------------------
+\section{Results I: Behavioral Discounting Findings}
+
+\begin{frame}{Result 1: Hyperbolic Model Best Explains Choice Data}
+    \begin{itemize}
+        \item \textbf{The Contest}: We tested competing intertemporal functional forms.
+    \end{itemize}
+    \begin{table}[]
+        \centering \small
+        \begin{tabular}{lccc}
+            \hline
+            \textbf{Model} & \textbf{Log-Likelihood} & \textbf{AIC} & \textbf{Evidence} \\
+            \hline
+            Exponential (Standard) & -4,521.2 & 9,046.4 & -- \\
+            \textbf{Hyperbolic (Behavioral)} & \textbf{-4,288.5} & \textbf{8,581.0} & \alert{\textbf{Best Fit}} \\
+            \hline
+        \end{tabular}
+    \end{table}
+    \vfill
+    \begin{exampleblock}{\centering \textbf{Conclusion: Present-Bias is Real}}
+        \centering \small Human vaccine timing is not a constant-rate process; it is dominated by a \alert{disproportionate penalty for immediate delays}.
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{The Anatomy of the Winner: The "Immediate Penalty" ($\kappa$)}
+    \begin{columns}[T]
+        \begin{column}{0.48\textwidth}
+            {\large \textbf{Estimated Parameter}}
+            \begin{exampleblock}{\centering $\hat{\kappa} = \mathbf{0.225}$ ($p<0.01$)}
+            \end{exampleblock}
+            \vspace{0.5cm}
+            \textbf{The Behavioral Hurdle}:
+            \begin{itemize}
+                \item Captures the \alert{sharp drop} in value the second a wait starts.
+                \item Explains why even short logistics delays kill acceptance.
+            \end{itemize}
+        \end{column}
+        
+        \begin{column}{0.52\textwidth}
+            \centering
+            \setlength{\unitlength}{0.9cm}
+            \begin{picture}(5,4)
+                \put(0,0){\vector(1,0){4.5}} \put(4.6,-0.1){$t$}
+                \put(0,0){\vector(0,1){3.5}} \put(-0.8,3.3){Value}
+                \color{red} \thicklines
+                \qbezier(0,3)(0.2,0.8)(4,0.5)
+                \color{black} \thinlines
+                \put(0.1,2.8){\vector(1,-2){0.4}}
+                \put(0.6,2.2){\scriptsize \alert{Instant Drop}}
+            \end{picture}
+            \vfill
+            \small \textbf{Takeaway}: It's the \textbf{structural pain} of "not having it now."
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Interpreting the Parameter: Behavioral Delay Multiplier (BDM)}
+    \begin{itemize}
+        \item \textbf{The Challenge}: Structural parameters ($\kappa$) are precise but abstract.
+        \item \textbf{The Solution}: We rescale $\hat{\kappa}$ into a transparent summary measure.
+    \end{itemize}
+    
+    \begin{exampleblock}{Definition: The BDM Formula}
+        \centering
+        \large $BDM = \frac{1}{1 - \hat{\kappa}}$
+    \end{exampleblock}
+    
+    \vspace{0.4cm}
+    \begin{itemize}
+        \item \textbf{Intuition}: It measures the \alert{perceived cost of waiting}. 
+        \item $BDM > 1 \implies$ Objective delay is experienced as a longer behavioral delay.
+    \end{itemize}
+    \vfill
+    \centering \scriptsize \textit{Provides a transparent link between structural estimation and policy intuition.}
+\end{frame}
+
+\begin{frame}{The "Psychological Markup" on Waiting (BDM)}
+    \begin{center}
+        \begin{beamercolorbox}[sep=1em, wd=0.6\textwidth, center]{block title}
+            \Huge \alert{\textbf{BDM = 1.29}}
+        \end{beamercolorbox}
+    \end{center}
+    
+    \textbf{Core Finding}: $\hat{\kappa} = 0.225 \implies BDM = 1.29$
+    \vspace{0.3cm}
+    \begin{exampleblock}{Interpretation: The 29\% Markup}
+        \small A \textbf{14-day} biological wait for antibodies feels like an \alert{\textbf{18.1-day}} delay in utility ($14 \times 1.29$).
+    \end{exampleblock}
+    \vfill
+    \textit{This markup explains why hesitancy persists even for high-efficacy vaccines.}
+\end{frame}
+
+\begin{frame}{The Buffer: Institutional Trust Mitigates the Penalty}
+    \begin{itemize}
+        \item Does trust help people "tolerate" the wait?
+    \end{itemize}
+    \vspace{0.4cm}
+    \begin{columns}[T]
+        \begin{column}{0.45\textwidth}
+            \begin{beamercolorbox}[sep=0.8em, wd=\linewidth, center]{block title}
+                \Large \textbf{1.19} \\ \small High Trust
+            \end{beamercolorbox}
+        \end{column}
+        \begin{column}{0.45\textwidth}
+            \begin{beamercolorbox}[sep=0.8em, wd=\linewidth, center]{block title}
+                \Large \alert{\textbf{1.55}} \\ \small Low Trust
+            \end{beamercolorbox}
+        \end{column}
+    \end{columns}
+    \vfill
+    \begin{itemize}
+        \item \textbf{Insight}: Trust acts as a \alert{behavioral stabilizer}. Without trust, the psychological cost of time inflates by over 50\%.
+    \end{itemize}
+\end{frame}
+
+% --- DATA QUALITY & VALIDITY (SHI LAB EDITION) ---
+
+\begin{frame}{Data Quality: The Evidence is Clean}
+    \vspace{0.4cm}
+    \begin{columns}[T]
+        \begin{column}{0.48\textwidth}
+            \begin{beamercolorbox}[sep=0.8em, wd=\linewidth, center]{block title}
+                \Huge \textbf{92\%} \\
+                \small \textbf{DCE Dominance Pass}
+            \end{beamercolorbox}
+            \vspace{0.2cm}
+            \centering \scriptsize \textit{Choosing the objectively better option \\ (Higher Efficacy + Lower Delay)}
+            \vspace{0.2cm}
+            \centering \small $\implies$ High Rationality
+        \end{column}
+        
+        \begin{column}{0.48\textwidth}
+            \begin{beamercolorbox}[sep=0.8em, wd=\linewidth, center]{block title}
+                \Huge \textbf{85.5\%} \\
+                \small \textbf{Test-Retest Reliability}
+            \end{beamercolorbox}
+            \vspace{0.2cm}
+            \centering \scriptsize \textit{Consistent choice when presented \\ with the same task again}
+            \vspace{0.2cm}
+            \centering \small $\implies$ Reliable Elicitation
+        \end{column}
+    \end{columns}
+    \vfill
+    \begin{itemize}
+        \item \textbf{Result}: Strong internal validity ensures these aren't random choices.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{External Validity: Consistent with Behavioral Theory}
+    \begin{center}
+        \includegraphics[width=0.65\textwidth]{correlation among Individual variables4.png}
+    \end{center}
+    \vfill
+    \begin{exampleblock}{\centering \textbf{The Core Signal}}
+        \centering \small Structural parameters ($\kappa, \delta$) significantly correlate with \alert{Trust} and \alert{Vulnerability}, proving preferences are linked to real-world traits.
+    \end{exampleblock}
+\end{frame}
+
+\begin{frame}{Robustness: A Universal Behavioral Signal}
+    \begin{center}
+        \includegraphics[width=0.85\textwidth]{Subgroup differences in time sensitivity.png}
+    \end{center}
+    \vfill
+    \begin{itemize}
+        \item \textbf{Finding}: MWTA is \alert{consistently positive} across all 18 subgroups.
+        \item \textbf{Takeaway}: Time sensitivity is a structural barrier, not an outlier effect.
+    \end{itemize}
+\end{frame}
+
+% --- BRIDGE TO POLICY ---
+
+\begin{frame}{Bridge: From Parameters to Policy Design}
+    \vfill
+    \centering
+    \begin{beamercolorbox}[sep=1.5em, wd=0.8\textwidth, center]{block title}
+        \Large \textbf{Structural modeling enables counterfactual policy design.}
+    \end{beamercolorbox}
+    \vfill
+    \small \textit{Moving beyond observed data to simulate optimal vaccine rollout...}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% SECTION IV: POLICY IMPACT EVALUATION
+% -----------------------------------------------------------------------------
+\section{Results II: Policy Evaluation \& Budget Allocation}
+
+\begin{frame}{Welfare Analysis: Translating Time into Money}
+    \begin{center}
+        \includegraphics[width=0.65\textwidth]{Iso-acceptance heatmap.png}
+    \end{center}
+    \vfill
+    \begin{columns}[T]
+        \begin{column}{0.5\textwidth}
+            \begin{beamercolorbox}[sep=1em, wd=\linewidth, center]{block title}
+                \Huge \textbf{111.4} \\
+                \small \textbf{RMB / Month}
+            \end{beamercolorbox}
+            \centering \scriptsize \textbf{Mean MWTA} (Shadow Price)
+        \end{column}
+        
+        \begin{column}{0.5\textwidth}
+            \small \textbf{Trade-off Dynamics}:
+            \begin{itemize}
+                \item \textbf{High-Trust}: Lower shadow price.
+                \item \textbf{High-Income}: Lower relative burden.
+            \end{itemize}
+            \vfill
+            \alert{Finding}: Time sensitivity is a major \textbf{welfare barrier} for the vulnerable.
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Efficiency: The Optimal Policy Mix}
+    \begin{columns}[T]
+        \begin{column}{0.6\textwidth}
+            \centering
+            \fcolorbox{gray!20}{white}{
+                \includegraphics[width=\textwidth]{essay3_policy_tradeoff_figure (1).png}
+            }
+        \end{column}
+        \begin{column}{0.4\textwidth}
+            \vspace{0.3cm}
+            \textbf{Simulation Results}:
+            \begin{itemize}
+                \item \textbf{High ROI}: Logistical speed-up (3 $\to$ 0.5 mo).
+                \item \textbf{Diminishing ROI}: Pure cash subsidies.
+            \end{itemize}
+            \vfill
+            \alert{Insight}: Logistics is the most cost-effective lever for urban vaccination.
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Equity: Closing the Protection Gap}
+    \begin{center}
+        \fcolorbox{gray!20}{white}{
+            \includegraphics[width=0.75\textwidth]{essay3_equity_budget_allocation.png}
+        }
+    \end{center}
+    \vfill
+    \begin{beamercolorbox}[wd=\textwidth, sep=6pt, center]{block body}
+        \small \textbf{Policy Strategy}: Logistics investment benefits the high-trust early, but \alert{targeted subsidies} are required to ensure equity for low-trust/marginalized groups.
+    \end{beamercolorbox}
+\end{frame}
+
+% -----------------------------------------------------------------------------
+% SECTION V: STRATEGIC BRIDGE (UCSD SYNERGY)
+% -----------------------------------------------------------------------------
+\section{Strategic Bridge: Transferability to Drug Policy}
+
+\begin{frame}{Transferability: Present-Bias in Addiction}
+    \begin{itemize}
+        \item \textbf{Conceptual Symmetry}: Vaccine delay choices $\approx$ Smoking/Cessation trade-offs.
+        \item \textbf{Modeling Addiction}: Applying $\hat{\kappa}$ and the BDM to evaluate impulsivity in tobacco/cannabis use.
+        \item \textbf{Regulatory Impact}: Using the MWTA framework to predict responses to new drug regulations (e.g., access barriers, taxation).
+    \end{itemize}
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}{Conclusion and Team Fit}
+    \begin{itemize}
+        \item \textbf{Summary}: First structural estimates of $(\delta, \kappa)$ for vaccination; original metrics for impact evaluation (BDM/MWTA).
+        \item \textbf{UCSD Fit}: Eager to leverage this behavioral toolkit to support the Shi Lab's impactful drug policy agenda.
+    \end{itemize}
+    \begin{center}
+        \Huge Thank you! \\
+        \vspace{1em}
+        \large Yichao Jin \\
+        \small Yichao.Jin@UTDallas.edu
+    \end{center}
+\end{frame}
+
+\end{document}

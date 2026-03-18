@@ -1,0 +1,83 @@
+
+% ===========================
+% Appendix D: Subgroup-specific Discounting Plots
+% ===========================
+\section*{Appendix D. Subgroup-specific Discounting Plots}
+\mbox{}
+\newcommand{\panelpair}[4]{%
+  \begin{minipage}{0.48\textwidth}
+    \includegraphics[width=\linewidth]{#1}
+    \caption*{#3}
+  \end{minipage}\hfill
+  \begin{minipage}{0.48\textwidth}
+    \includegraphics[width=\linewidth]{#2}
+    \caption*{#4}
+  \end{minipage}%
+}
+﻿
+% Hide subfigure labels (A, B, …) just for these figures
+\captionsetup[subfigure]{labelformat=empty}
+
+\begin{figure*}[t]
+  \centering
+
+  % Panels A–C
+  \panelpair
+    {Age Hyperbolic Discounting.png}
+    {Age Exponential Discounting.png}
+    {Panel A: Age-specific discounting. Five age groups (18–34, 35–44, 45–54, 55–65, 65+).}
+    {Five age groups (18–34, 35–44, 45–54, 55–65, 65+).}
+
+  \vspace{0.6em}
+  \panelpair
+    {Urban vs Rural-Hyperbolic discounting.png}
+    {Urban vs Rural-Exponential discounting.png}
+    {Panel B: Location-specific discounting}
+    {Urban vs rural respondents.}
+
+  \vspace{0.6em}
+
+  \panelpair
+    {Medical condition-Hyperbolic discounting.png} % Corrected filename
+    {Medical condition-Exponential discounting.png}
+    {Panel C: Medical condition–specific discounting}
+    {Individuals with vs without medical conditions.}
+
+  \caption{\textbf{Appendix Figure D1.} Subgroup-specific discounting (Panels A–C). Each panel compares $D(t)$ under hyperbolic vs exponential fits.}
+  \label{fig:appendix_discounting_p1}
+\end{figure*}
+\FloatBarrier
+
+\begin{figure*}[t!]
+  \centering
+
+  % Panels D–E
+  \panelpair
+    {Government trust-Hyperbolic discounting.png}
+    {Government trust-Exponential discounting.png}
+    {Panel D: Government trust–specific discounting}
+    {Five levels of government trust.}
+
+  \vspace{0.6em}
+
+  \panelpair
+    {Smoking status-Hyperbolic Discounting.png}
+    {Smoking Status-Exponential Discounting.png}
+    {Panel E1: Smoking status–specific discounting}
+    {Never, sometimes, often.}
+
+  \vspace{0.6em}
+
+  \panelpair
+    {Physical activity-Hyperbolic Discounting.png}
+    {Physical activity-Exponential Discounting.png}
+    {Panel E2: Physical activity–specific discounting}
+    {Rare, sometimes, quite often.}
+
+  \caption{\textbf{Appendix Figure D2.} Subgroup-specific discounting (Panels D–E). Each row shows hyperbolic vs exponential discount functions $D(t)$ for a category.}
+  \label{fig:appendix_discounting_p2}
+\end{figure*}
+
+% Restore normal subfigure caption labels afterward (optional)
+\captionsetup[subfigure]{labelformat=parens,labelsep=space}
+\FloatBarrier
