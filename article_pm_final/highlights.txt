@@ -1,5 +1,0 @@
-- Vaccination delays act as a behavioral barrier, creating a psychological time tax.
-- Low institutional trust doubles delay sensitivity, worsening health inequities.
-- Vulnerable groups perceive a 30-day wait as 45 days of biological exposure risk.
-- Fast-tracking vulnerable groups mitigates behavioral friction and boosts uptake.
-- Wait times should be a core performance metric in public health implementation.
