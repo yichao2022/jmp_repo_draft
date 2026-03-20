@@ -18,13 +18,15 @@ The timing of vaccine uptake is a critical but under-explored dimension of epide
 - **Methodological Integration**: Combined structural behavioral modeling with SEIR epidemic simulations to quantify the welfare impacts of behavioral delay.
 
 ### 📊 Visualizing the Behavioral Friction
-Waiting time significantly discourages vaccination uptake, but the effect is moderated by socio-psychological factors:
-- **Urban-Rural Divide**: Urban residents are significantly more sensitive to wait time ($p=0.029$).
-- **Trust as a Buffer**: High institutional trust acts as a psychological buffer, mitigating the negative impact of behavioral frictions ($p=0.035$).
+Waiting time significantly discourages vaccination uptake, but the "behavioral tax" varies by institutional trust and socioeconomic context:
+- **Main Effect**: Waiting time acts as a major deterrent to vaccine uptake, significantly flattening the adoption curve.
+- **Trust as a Buffer**: High institutional trust significantly mitigates the negative impact of wait time ($p < 0.05$ in the three-group specification).
+- **Economic Value (MWTA)**: The median Marginal Willingness to Accept (MWTA) for reducing wait time is approximately 47 RMB/hour, with significant heterogeneity across trust levels.
 
 <p align="center">
-  <img src="plots/urban_rural_sensitivity.png" width="45%" />
-  <img src="plots/trust_buffer_effect.png" width="45%" />
+  <img src="plots/wait_time_main_effect_publication.png" width="32%" />
+  <img src="plots/trust_heterogeneity_plot.png" width="32%" />
+  <img src="plots/mwta_analysis_plot.png" width="32%" />
 </p>
 
 ## 3. Repository Structure
