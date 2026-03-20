@@ -1,0 +1,36 @@
+# Updated .gitignore for JMP Repo
+
+# Specific Exclusions
+.venv/
+venv/
+env/
+*_env/
+node_modules/
+kkFileView-run/
+*.jar
+*.dylib
+__pycache__/
+*.pyc
+.DS_Store
+
+# General LaTeX junk
+*.aux
+*.log
+*.out
+*.toc
+# *.pdf
+*.gz
+*.fdb_latexmk
+*.fls
+
+# R junk
+.Rhistory
+.RData
+.Ruserdata
+
+# Python junk
+*.py[cod]
+*$py.class
+
+# OS junk
+Thumbs.db
