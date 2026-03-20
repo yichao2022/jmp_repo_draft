@@ -1,0 +1,88 @@
+Individuals: 1027 
+Total Choice Situations: 6162 
+
+
+==============================================================================
+                                      Cond. Logit   MNL           Mixed Logit 
+------------------------------------------------------------------------------
+(Intercept):B                            -0.11 **      -0.01          0.41 ***
+                                         (0.03)        (0.10)        (0.05)   
+(Intercept):C                            -0.33 **      -0.29          0.15    
+                                         (0.10)        (0.15)        (0.15)   
+WaitTime_std                             -0.12 ***     -0.13 ***     -0.54 ***
+                                         (0.02)        (0.02)        (0.03)   
+VaccineEfficacy_std                       0.16 ***      0.17 ***      0.32 ***
+                                         (0.04)        (0.04)        (0.04)   
+SideEffects_std                          -0.08 **      -0.08 **       0.18 ***
+                                         (0.03)        (0.03)        (0.04)   
+CashIncentives_std                        0.31 ***      0.31 ***      0.54 ***
+                                         (0.02)        (0.02)        (0.03)   
+VaccineOrigin1                            0.24 ***      0.24 ***      0.09    
+                                         (0.04)        (0.04)        (0.05)   
+Age35-44:B                                             -0.07                  
+                                                       (0.08)                 
+Age35-44:C                                             -0.03                  
+                                                       (0.10)                 
+Age45-54:B                                             -0.03                  
+                                                       (0.09)                 
+Age45-54:C                                             -0.07                  
+                                                       (0.11)                 
+Age55-65:B                                             -0.02                  
+                                                       (0.10)                 
+Age55-65:C                                             -0.11                  
+                                                       (0.13)                 
+Age65 above:B                                          -0.03                  
+                                                       (0.11)                 
+Age65 above:C                                           0.18                  
+                                                       (0.13)                 
+GenderM:B                                              -0.02                  
+                                                       (0.06)                 
+GenderM:C                                               0.05                  
+                                                       (0.07)                 
+EducationGraduated  :B                                 -0.19                  
+                                                       (0.12)                 
+EducationGraduated  :C                                 -0.11                  
+                                                       (0.14)                 
+EducationHigh school:B                                 -0.06                  
+                                                       (0.10)                 
+EducationHigh school:C                                 -0.27 *                
+                                                       (0.12)                 
+EducationMiddle school:B                                0.06                  
+                                                       (0.10)                 
+EducationMiddle school:C                               -0.12                  
+                                                       (0.12)                 
+EducationNo formal education:B                         -0.10                  
+                                                       (0.14)                 
+EducationNo formal education:C                          0.05                  
+                                                       (0.17)                 
+EducationPrimary school :B                             -0.11                  
+                                                       (0.10)                 
+EducationPrimary school :C                             -0.09                  
+                                                       (0.12)                 
+UrbanRural1:B                                          -0.02                  
+                                                       (0.06)                 
+UrbanRural1:C                                           0.11                  
+                                                       (0.07)                 
+MedicalConditions1:B                                    0.09                  
+                                                       (0.09)                 
+MedicalConditions1:C                                    0.11                  
+                                                       (0.11)                 
+MedicalConditionsPrefer not to say:B                   -0.08                  
+                                                       (0.09)                 
+MedicalConditionsPrefer not to say:C                    0.11                  
+                                                       (0.11)                 
+sd.WaitTime_std                                                       1.68 ***
+                                                                     (0.08)   
+sd.VaccineEfficacy_std                                                0.45 ***
+                                                                     (0.03)   
+sd.SideEffects_std                                                   -0.11    
+                                                                     (0.08)   
+sd.CashIncentives_std                                                -0.01    
+                                                                     (0.09)   
+------------------------------------------------------------------------------
+AIC                                   12207.22      12227.75      11090.35    
+Log Likelihood                        -6096.61      -6080.88      -5534.18    
+Num. obs.                              6162          6162          6162       
+K                                         3             3             3       
+==============================================================================
+*** p < 0.001; ** p < 0.01; * p < 0.05
