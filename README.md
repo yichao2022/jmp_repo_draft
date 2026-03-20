@@ -1,80 +1,93 @@
 # How Waiting Time Shapes Preventive Health Behavior: Evidence from Vaccination Decisions
 
-**Job Market Paper**  
-**Author**: [Yichao Jin](https://yichao2022.github.io/) (University of Texas at Dallas)
+[![R-Version](https://img.shields.io/badge/R-4.0%2B-blue.svg)](https://www.r-project.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![JMP](https://img.shields.io/badge/Status-Job%20Market%20Paper-red.svg)](https://yichao2022.github.io/)
 
-[![Paper](https://img.shields.io/badge/Paper-Download-red)](https://yichao2022.github.io/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+**Author:** [Yichao Jin](https://yichao2022.github.io/) (University of Texas at Dallas)  
+**Co-authors:** Dohyeong Kim, Zhen Tian
 
 ---
 
-## 1. Motivation
-The timing of vaccine uptake is a critical but under-explored dimension of epidemic control. While traditional models focus on *whether* people vaccinate, this paper investigates *when* they vaccinate. We define waiting time as a "behavioral tax" on public health implementation. By quantifying the trade-off between waiting time and financial incentives, we provide a structural framework to optimize the timing of preventive health interventions.
+## 📌 Research Overview
 
-## 2. Key Contributions & Behavioral Insights
-- **Structural Estimation**: Recovered behavioral discounting parameters using a Discrete Choice Experiment (DCE) on a large-scale representative sample.
-- **MWTA Discovery**: Calculated the Marginal Willingness to Accept (MWTA) for reducing vaccination delay, finding significant heterogeneity across socioeconomic groups (Median MWTA ≈ 47 RMB/hour).
-- **Policy Simulation**: Demonstrated how time-sensitive incentives can flatten the epidemic curve more effectively than flat subsidies.
-- **Methodological Integration**: Combined structural behavioral modeling with SEIR epidemic simulations to quantify the welfare impacts of behavioral delay.
+While traditional models of preventive health focus on *whether* individuals vaccinate, this paper investigates **when** they vaccinate. We conceptualize and quantify waiting time as a **"behavioral tax"** on public health implementation.
 
-### 📊 Visualizing the Behavioral Friction
-Waiting time significantly discourages vaccination uptake, but the effect is moderated by socio-psychological factors:
-- **Urban-Rural Divide**: Urban residents are significantly more sensitive to wait time ($p=0.029$).
-- **Trust as a Buffer**: High institutional trust acts as a psychological buffer, mitigating the negative impact of behavioral frictions ($p=0.035$).
+### Key Contributions:
+- **Structural Estimation:** Recovered behavioral discounting parameters (κ=0.225) using a large-scale Discrete Choice Experiment (DCE).
+- **MWTA Discovery:** Identified a Median Marginal Willingness to Accept (MWTA) of ≈ **47 RMB/hour** for reducing vaccination delay.
+- **Trust as a Buffer:** Found that high institutional trust significantly mitigates the deterrent effect of wait times ($p < 0.05$).
+- **Epidemic Impact:** Integrated behavioral parameters into SEIR models, demonstrating that time-sensitive incentives flatten the curve more effectively than flat subsidies.
 
-<p align="center">
-  <img src="plots/urban_rural_sensitivity.png" width="45%" />
-  <img src="plots/trust_buffer_effect.png" width="45%" />
-</p>
+---
 
-## 3. Repository Structure
-```text
-/models/              → Implementation of Structural Parameter Recovery and Mixed Logit models.
-  - discount_estimation.R: Replicates the κ=0.225 finding (Hyperbolic vs Exponential fit).
-  - logit_analysis.R: Main discrete choice modeling (Mixed Logit, Subgroups, MWTA).
-  - seir_behavioral.R: SEIR epidemic simulation integrated with behavioral delay functions.
-/data_simulation/     → Synthetic data generation and sample datasets
-  - generate_synthetic_data.R: Creates a synthetic dataset mirroring original survey statistics.
-/plots/               → Key result plots and visual summaries.
-/results/             → Tabular outputs and parameter summaries.
-/docs/                → Paper PDF (Job Market Paper) and methodology details.
-data_access.md        → Explanation of restricted vs. synthetic data.
-METHODOLOGY.md        → Deep dive into the Mixed Logit & MWTA logic.
+## 📊 Key Results
+
+![Main Effect of Waiting Time](plots/wait_time_main_effect_publication.png)
+*Figure 1: Survival analysis of vaccine uptake showing the deterrent effect of waiting time (Behavioral Tax).*
+
+| Feature | Finding | Impact |
+| :--- | :--- | :--- |
+| **Discounting (κ)** | 0.225 (Hyperbolic) | Strong evidence of present-bias in health timing |
+| **MWTA** | 47 RMB/hour | Quantifies the financial value of time-saving |
+| **Institutional Trust** | Positive Interaction | Trust reduces the perceived "cost" of waiting |
+
+---
+
+## 📂 Repository Structure
+
+```bash
+├── models/             # Structural Parameter Recovery & Mixed Logit models
+│   ├── discount_estimation.R  # Replicates κ=0.225 finding (Hyperbolic vs Exponential)
+│   ├── logit_analysis.R       # Mixed Logit & MWTA Calculation
+│   └── seir_behavioral.R      # Behavioral-SEIR integration
+├── data_simulation/    # Synthetic data generation (Privacy compliant)
+│   └── generate_synthetic_data.R # Mirroring original survey statistics
+├── plots/              # High-resolution publication figures
+├── docs/               # Full Paper PDF & Methodology Deep-dive
+└── run_all.R           # Master script for one-click replication
 ```
 
-## 4. Quick Replication (Main Results)
-To replicate the parameter recovery logic using provided synthetic data:
+---
 
-1.  **Generate/Load Data**:
-    `Rscript data_simulation/01_generate_synthetic_data.R`
-2.  **Estimate Structural Model**:
-    `Rscript models/01_validate_recovery.R`
-3.  **Produce Figures**:
-    `Rscript plots/01_generate_main_plots.R` (Note: Local directory is `plots/`)
+## 🚀 Quick Start (Replication)
 
-## 5. Requirements
-This project primarily uses **R**. Required packages:
-- `mlogit` (for Mixed Logit estimation)
-- `tidyverse` (for data manipulation)
-- `ggplot2` (for visualization)
+This repository provides a **validated synthetic dataset** that preserves the exact structural properties of the original restricted data.
 
-## 6. Data Availability
-Primary experimental data are restricted due to privacy compliance. This repository provides a validated **synthetic dataset** that replicates the structural properties of the original sample. See [data_access.md](data_access.md) for details.
+### 1. Requirements
+Ensure you have R installed with the following packages:
+```r
+install.packages(c("mlogit", "tidyverse", "ggplot2", "deSolve"))
+```
+
+### 2. One-Click Replication
+To replicate the main findings, parameter recovery, and plots:
+```bash
+Rscript run_all.R
+```
+*This script will: (1) Generate synthetic data, (2) Estimate the Mixed Logit model, and (3) Re-generate all figures in the `/plots` folder.*
 
 ---
 
-## 🎓 Citation
+## 🛡 Data Privacy Note
+Primary experimental data are restricted due to Institutional Review Board (IRB) compliance. The provided synthetic data replicates the structural covariance and behavioral coefficients of the original sample for validation purposes. See [data_access.md](data_access.md) for full details.
 
-If you find this research or code useful, please cite:
+---
+
+## 📖 Citation
+
+If you find this research or code useful for your work, please cite:
 
 ```bibtex
 @article{jin2026waiting,
   title={How Waiting Time Shapes Preventive Health Behavior: Evidence from Vaccination Decisions},
   author={Jin, Yichao and Kim, Dohyeong and Tian, Zhen},
   year={2026},
-  journal={Working Paper},
+  journal={Working Paper (Job Market Paper)},
   url={https://yichao2022.github.io/}
 }
 ```
 
-**Contact**: [Yichao.Jin@UTDallas.edu](mailto:Yichao.Jin@UTDallas.edu)
+---
+
+**Contact:** [Yichao.Jin@UTDallas.edu](mailto:Yichao.Jin@UTDallas.edu) | [Website](https://yichao2022.github.io/)
