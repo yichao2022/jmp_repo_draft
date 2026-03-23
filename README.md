@@ -1,4 +1,4 @@
-# How Waiting Time Shapes Preventive Health Behavior: Evidence from Vaccination Decisions
+# Waiting Time as a Behavioral Barrier to Vaccination Uptake: Nonlinear Heterogeneity by Institutional Trust
 
 [![R-Version](https://img.shields.io/badge/R-4.0%2B-blue.svg)](https://www.r-project.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
